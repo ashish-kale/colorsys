@@ -276,7 +276,7 @@ colorsys.hsv2Hsl = function (h, s, v) {
     }
   }
 
-  return { h, s, l }
+  return { h: h, s: s, l: l };
 }
 
 colorsys.hsv_to_hsl = colorsys.hsvToHsl = colorsys.hsv2Hsl
@@ -344,7 +344,7 @@ colorsys.rotateHue = function (hue, amount) {
   const aux = typeof hue === 'object'
       ? (hue.h + amount) % 360
       : (hue + amount) % 360
-      
+
   const nextHue = aux < 0 ? (360 + aux) : aux
   return typeof hue === 'object'
       ? Object.assign(hue, { h: nextHue })
